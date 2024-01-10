@@ -1,0 +1,10 @@
+spring:
+  security:
+    oauth2:
+      resourceServer:
+        jwt:
+          issuerUri: http://localhost:8081/realms/oauth2-realm
+          jwkSetUri: ${spring.security.oauth2.resourceServer.jwt.issuerUri}/protocol/openid-connect/certs
+
+#server:
+#  port: 8081
