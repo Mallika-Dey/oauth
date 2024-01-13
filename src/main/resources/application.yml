@@ -6,5 +6,10 @@ spring:
           issuerUri: http://localhost:8081/realms/oauth2-realm
           jwkSetUri: ${spring.security.oauth2.resourceServer.jwt.issuerUri}/protocol/openid-connect/certs
 
+jwt:
+  auth:
+    converter:
+      resourceId: oauth-client
+      principleAttribute: preferred_username
 #server:
 #  port: 8081
