@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: resourceserver
+  security:
+    oauth2:
+      resourceServer:
+        jwt:
+          issuerUri: http://localhost:9090/realms/mallika_realm
+          jwkSetUri: http://localhost:9090/realms/mallika_realm/protocol/openid-connect/certs
+
+  logging:
+    level:
+      org:
+        springframework:
+          security: DEBUG
+
+keycloak:
+  auth-server-url: http://localhost:9090
+  realm: mallika_realm
+  resource: CID
+
+jwt:
+  auth:
+    converter:
+      resourceId: CID
+      principleAttribute: preferred_username
