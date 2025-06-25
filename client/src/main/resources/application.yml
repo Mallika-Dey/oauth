@@ -1,0 +1,24 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: CID
+            authorization-grant-type: refresh_token
+            scope: openid,profile,email
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9090/realms/mallika_realm
+            token-uri: http://localhost:9090/realms/mallika_realm/protocol/openid-connect/token
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+
+cors:
+  allowed-origins: http://localhost:5173
+  allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+  allowed-headers: "*"
+  allow-credentials: true
